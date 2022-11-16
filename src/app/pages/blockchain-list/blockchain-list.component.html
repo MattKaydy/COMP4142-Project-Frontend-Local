@@ -1,0 +1,25 @@
+<div class="container mt-2">
+    <p>Current Mining Difficulty: {{difficulty}}</p>
+    <p>Current Mining Reward: {{reward}}</p>
+    <p>Current Wallet Balance: {{balance}} </p>
+
+    <h1>Holy fucking Medusa Madame balls! The blockchain list is finally working!</h1>
+
+    
+    <div class="container py-2 testimonial-group" style=" overflow-x: auto; white-space: nowrap;">
+        <app-block-data-card-view
+        *ngFor="let block of blocks" [block]="block" [selectedBlock]="selectedBlock" (click)="showTransactions(block)">
+        </app-block-data-card-view>
+    </div>
+    
+
+    <br>
+    <br>
+
+
+	<h1>Transactions inside block</h1>
+
+	<app-transactions-data-table-view
+		[transactions]="selectedBlock.transactions">
+    </app-transactions-data-table-view>
+</div>

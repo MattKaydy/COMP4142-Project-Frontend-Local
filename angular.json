@@ -17,6 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": ["crypto", "stream"],
             "outputPath": "dist/comp4142-project-frontend-local",
             "index": "src/index.html",
             "main": "src/main.ts",

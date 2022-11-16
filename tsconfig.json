@@ -2,10 +2,16 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths":{
+      "crypto":["node_modules/crypto-browserify"],
+      "stream":["node_modules/stream-browserify"]
+    },
+    "noUnusedLocals": false,
+    "noImplicitAny": false,
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
+    "strict": false,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
