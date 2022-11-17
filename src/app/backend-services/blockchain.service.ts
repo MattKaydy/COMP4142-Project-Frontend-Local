@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 import { Blockchain } from '../../../../COMP4142-Project-Backend/src/blockchain';
 const crypto = require('crypto');
 const EC = require('elliptic');
+const fs = require('fs');
 
 @Injectable({
   providedIn: 'root'
@@ -15,12 +16,11 @@ export class BlockchainService {
   public walletKeys: Array<IWalletKey> = [];
 
   constructor() {
-    this.blockchainInstance.difficulty = 1;
     this.blockchainInstance.minePendingTransactions('hi');
 
     this.generateWalletKeys();
 
-    console.log("Running 2");
+    console.log("Running");
   
   }
 
