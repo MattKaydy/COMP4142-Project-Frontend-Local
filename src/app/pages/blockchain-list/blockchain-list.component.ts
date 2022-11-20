@@ -7,7 +7,7 @@ import { BlockchainService } from 'src/app/backend-services/blockchain.service';
 })
 export class BlockchainListComponent implements OnInit {
 
-  public blocks = []; //Test
+  public blocks = []; //Test2
   public selectedBlock = null;
   public difficulty = -1;
   public reward = -1;
@@ -16,7 +16,7 @@ export class BlockchainListComponent implements OnInit {
   constructor(private blockchainService: BlockchainService) {
     this.blocks = blockchainService.getBlocks();
     this.selectedBlock = this.blocks[0];
-    this.difficulty = blockchainService.blockchainInstance.difficulty;
+    this.difficulty = blockchainService.blockchainInstance.getLatestBlock().difficulty;
     this.reward = blockchainService.blockchainInstance.miningReward;
     console.log(this.blocks);
     this.balance = blockchainService.blockchainInstance.getBalanceOfAddress(blockchainService.walletKeys[0].publicKey);
